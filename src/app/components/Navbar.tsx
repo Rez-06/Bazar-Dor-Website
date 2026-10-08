@@ -10,7 +10,7 @@ const Navbar = ({data}:{ data: { id: string,
     return (
         <div className='pt-3'>
             <hr className="w-full h-0.5 border-white bg-gray-100" />
-            <div className="container mx-auto grid grid-cols-4 gap-4 pl-4 py-4 sm:flex sm:gap-8">
+            <div className="container mx-auto grid grid-cols-4 gap-4 pl-4 py-2 sm:flex sm:gap-8">
                 {data.map((n) => {
                     const href = `/category/${n.slug}`;
                     const isActive = pathName.replace(/\/$/, "") === href;
@@ -19,7 +19,7 @@ const Navbar = ({data}:{ data: { id: string,
                         key={n.slug}
                         href={href}
                         
-                        className={`flex items-center hover:text-red-700 text-xs font-semibold ${isActive?"text-red-800":"text-black"}`}
+                        className={`flex items-center hover:text-red-700 text-xs font-semibold ${isActive?"text-white  bg-green-600 p-2 rounded-lg":"text-black p-2"}`}
                         
                     >
                         {n.icon} {n.nameBn}
