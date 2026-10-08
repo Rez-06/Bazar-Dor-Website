@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Hind_Siliguri } from "next/font/google";
 import "./globals.css";
 import Header from "./components/Header";
+import Footer from "./components/Footer";
 
 
 const hindSiliguri = Hind_Siliguri({
@@ -24,7 +25,12 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       
       <body className="min-h-full flex flex-col">
         <Header/>
-        {children}</body>
+
+          {children}
+
+        
+        <Footer/>
+        </body>
     </html>
   );
 }

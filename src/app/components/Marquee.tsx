@@ -18,7 +18,7 @@ const Marquee = () => {
                         href={`/category/${n.slug}`}
                                                                     
                     >
-                        <div className='flex items-center px-5 py-3 border-r border-b border-gray-200'>
+                        <div className='flex items-center px-5 py-3 border-r border-b border-gray-200 hover:bg-gray-200'>
                             <div className='flex pr-3'>
                                 {n.image} <h2 className='font-semibold pl-2'>{n.nameBn}</h2>
                             </div>
