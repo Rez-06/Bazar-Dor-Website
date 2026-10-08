@@ -18,11 +18,13 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
-      
+      data-theme="light"
       className={`${hindSiliguri.className}  h-full antialiased`}
     >
-      <Header/>
-      <body className="min-h-full flex flex-col">{children}</body>
+      
+      <body className="min-h-full flex flex-col">
+        <Header/>
+        {children}</body>
     </html>
   );
 }
