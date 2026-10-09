@@ -2,6 +2,7 @@ import Card from "@/app/components/Card";
 import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
+import { notFound } from "next/navigation";
 // import { useState } from "react";
 type Props = {
   params: Promise<{ slug: string }>;
@@ -10,8 +11,14 @@ type Props = {
 export default async function CategoryPage({ params }: Props) {
   const { slug } = await params;
   const res=await fetch(`https://api.api-store.workers.dev/api/bazardor/products?category=${slug}`)
+  if (!res.ok) {
+    notFound();
+  }
   const data=await res.json()
   const res2=await fetch(`https://api.api-store.workers.dev/api/bazardor/categories/${slug}`)
+  if (!res2.ok) {
+    notFound();
+  }
   const data2=await res2.json()
   // const [selected,setSelected] = useState("ডিফল্ট ");
   

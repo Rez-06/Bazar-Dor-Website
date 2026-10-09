@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleRight } from "@fortawesome/free-solid-svg-icons";
-
+import { notFound } from "next/navigation";
 import { faCaretUp, faCaretDown } from "@fortawesome/free-solid-svg-icons";
 type Props = {
   params: Promise<{ slug: string }>;
@@ -10,6 +10,9 @@ type Props = {
 export default async function ProductPage({ params }: Props) {
     const { slug } = await params;
     const res = await fetch(`https://api.api-store.workers.dev/api/bazardor/products?slug=${slug}`)
+    if (!res.ok) {
+        notFound();
+    }
     const data=await res.json();
     const product = Array.isArray(data) ? data[0] : data;
     console.log("here",data)   
