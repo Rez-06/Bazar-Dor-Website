@@ -3,6 +3,8 @@ import React from 'react';
 const Footer = () => {
     return (
         <div>
+            <div className='bg-[#F0F5F0] h-10'></div>
+            
             <hr />
             <div className='flex justify-between container mx-auto py-5 font-medium md:text-lg text-xs'>
                 <div>

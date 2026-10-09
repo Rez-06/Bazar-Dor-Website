@@ -45,19 +45,11 @@ export default async function CategoryPage({ params }: Props) {
 
         
       </div>
-
-      <div className="container mx-auto grid-cols-3">
-        {data.map((n) => {
-                    
-                    return(
-                      <div key={n.id}>
-                        <Card  props={n}/>
-
-                      </div>
-                    
-                    
-                    )
-          })}
+      
+      <div className="container mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 justify-items-center justify-center">
+          {data.map((n) => (
+            <Card key={n.id} props={n} />
+          ))}
       </div>
 
     </div>

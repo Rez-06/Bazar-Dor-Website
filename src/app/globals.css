@@ -5,3 +5,7 @@
   color-scheme: light;
 }
 
+html,
+body {
+  font-family: var(--font-hind-siliguri), sans-serif;
+}

@@ -8,6 +8,7 @@ import Footer from "./components/Footer";
 const hindSiliguri = Hind_Siliguri({
   subsets: ["latin", "bengali"],
   weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-hind-siliguri",
 });
 
 export const metadata: Metadata = {
@@ -18,9 +19,9 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
-      lang="en"
-      data-theme="light"
-      className={`${hindSiliguri.className}  h-full antialiased`}
+    lang="bn"
+    data-theme="light"
+    className={`${hindSiliguri.variable} h-full antialiased`}
     >
       
       <body className="min-h-full flex flex-col">

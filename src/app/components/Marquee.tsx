@@ -23,7 +23,7 @@ const Marquee = () => {
                             <div className='flex pr-3'>
                                 {n.image} <h2 className='font-semibold pl-2'>{n.nameBn}</h2>
                             </div>
-                            {n.today} টাকা/
+                            {n.today.toLocaleString("bn-BD")} টাকা/
                             {n.unit === "kg" ? "কেজি" :
                             n.unit === "gram" ? "গ্রাম" :
                             n.unit === "liter" ? "লিটার" :
