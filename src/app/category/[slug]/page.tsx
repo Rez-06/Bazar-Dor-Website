@@ -9,9 +9,9 @@ type Props = {
 
 export default async function CategoryPage({ params }: Props) {
   const { slug } = await params;
-  const res=await fetch(`https://api.abcz.workers.dev/api/bazardor/products?category=${slug}`)
+  const res=await fetch(`https://api.api-store.workers.dev/api/bazardor/products?category=${slug}`)
   const data=await res.json()
-  const res2=await fetch(`https://api.abcz.workers.dev/api/bazardor/categories/${slug}`)
+  const res2=await fetch(`https://api.api-store.workers.dev/api/bazardor/categories/${slug}`)
   const data2=await res2.json()
   // const [selected,setSelected] = useState("ডিফল্ট ");
   
@@ -48,6 +48,7 @@ export default async function CategoryPage({ params }: Props) {
       
       <div className="container mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 justify-items-center justify-center">
           {data.map((n) => (
+            
             <Card key={n.id} props={n} />
           ))}
       </div>

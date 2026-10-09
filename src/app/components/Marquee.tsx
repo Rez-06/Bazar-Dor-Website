@@ -1,7 +1,7 @@
 import React from 'react';
 import MarqueeText from "react-marquee-text"
 import Link from 'next/link';
-const res = await fetch("https://api.abcz.workers.dev/api/bazardor/products")
+const res = await fetch("https://api.api-store.workers.dev/api/bazardor/products")
 const data= await res.json();
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCaretUp, faCaretDown } from "@fortawesome/free-solid-svg-icons";
@@ -13,10 +13,11 @@ const Marquee = () => {
             <MarqueeText>
                 {data.map((n) => {
                     const up=(n.change.dir==="up")
+                    
                     return(
                     <Link
                         key={n.slug}
-                        href={`/category/${n.slug}`}
+                        href={`/product/${n.slug}`}
                                                                     
                     >
                         <div className='flex items-center px-5 py-3 border-r border-b border-gray-200 hover:bg-gray-200'>
