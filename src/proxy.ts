@@ -5,12 +5,14 @@ export function proxy(request: NextRequest) {
   const sessionCookie = getSessionCookie(request);
 
   if (!sessionCookie) {
-    return NextResponse.redirect(new URL("/sign-in", request.url));
+    const url = new URL("/sign-in", request.url);
+    url.searchParams.set("redirected", "1");
+    return NextResponse.redirect(url);
   }
 
   return NextResponse.next();
 }
 
 export const config = {
-  matcher: ["/profile", "/product/:path*"],
+  matcher: ["/profile/:path*", "/product/:path*"],
 };

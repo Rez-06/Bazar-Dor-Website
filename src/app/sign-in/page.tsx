@@ -1,15 +1,16 @@
 "use client";
-import { useEffect, useState, type FormEvent } from "react";
+import { Suspense, useEffect, useState, type FormEvent } from "react";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import toast from "react-hot-toast";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
 import SocialButtons from "@/app/components/SocialButtons";
 import { authClient } from "@/app/lib/auth-client";
 
-export default function SignInPage() {
+function SignInForm() {
   const router = useRouter();
+  const searchParams = useSearchParams();
   const { data: session } = authClient.useSession();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -20,6 +21,13 @@ export default function SignInPage() {
   useEffect(() => {
     if (session) router.replace("/");
   }, [session, router]);
+
+  useEffect(() => {
+    if (searchParams.get("redirected") === "1") {
+      toast.error("এই পেজ দেখতে প্রথমে সাইন ইন করুন", { id: "auth-redirect" });
+      router.replace("/sign-in");
+    }
+  }, [searchParams, router]);
 
   const fail = (message: string) => {
     setError(message);
@@ -111,5 +119,22 @@ export default function SignInPage() {
         </Link>
       </div>
     </div>
+  );
+}
+
+export default function SignInPage() {
+  return (
+    <Suspense
+      fallback={
+        <div className="bg-[#F0F5F0] flex-1 px-4 py-10">
+          <div className="mx-auto w-full max-w-md flex flex-col gap-4">
+            <div className="skeleton h-8 w-40 mx-auto"></div>
+            <div className="skeleton h-72 w-full rounded-2xl"></div>
+          </div>
+        </div>
+      }
+    >
+      <SignInForm />
+    </Suspense>
   );
 }

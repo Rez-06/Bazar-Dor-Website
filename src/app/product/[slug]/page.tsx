@@ -44,7 +44,7 @@ export default async function ProductPage({ params }: Props) {
     if (!product) {
         notFound();
     }
-    console.log("here",data)
+
 
     const unitBn = UNIT_BN[product.unit] ?? product.unit;
     const markets: Market[] = product.markets ?? [];

@@ -31,7 +31,7 @@ export default async function Home() {
     .filter((product) => product.change.dir === "down")
     .sort((a, b) => Math.abs(b.change.pct) - Math.abs(a.change.pct))
     .slice(0, 6);
-  console.log("here",topDecreases)
+  
   const date = new Date().toLocaleDateString("bn-BD", {
         dateStyle: "full",
     });
@@ -53,7 +53,7 @@ export default async function Home() {
             </div>
 
             <div>
-              <Link href="#allProducts">
+              <Link href="#সব-পণ্য">
                 <button className="btn bg-green-700 mt-3 mb-8 md:mb-15 text-white">
                   সব পণ্য দেখুন
                 </button>
@@ -93,7 +93,7 @@ export default async function Home() {
           </div>
         </div>
 
-        <div className="flex flex-col mx-auto w-full max-w-6xl px-4 px-3 pt-10" id="allProducts">
+        <div className="flex flex-col mx-auto w-full max-w-6xl px-4 px-3 pt-10" id="সব-পণ্য">
           <div className="font-semibold text-lg">সব পণ্য</div>
           <div className="text-sm text-gray-500">মোট {data.length.toLocaleString("bn-BD")}টি পণ্য দেখানো হচ্ছে</div>
           
