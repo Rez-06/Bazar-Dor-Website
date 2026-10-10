@@ -3,6 +3,7 @@ import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import SortDropdown from "@/app/components/SortDropdown";
 // import { useState } from "react";
 type Props = {
   params: Promise<{ slug: string }>;
@@ -35,30 +36,14 @@ export default async function CategoryPage({ params }: Props) {
         
       </div>
 
-      <div className="bg-white container mx-auto my-5 rounded-3xl flex justify-end items-center border gap-5 border-gray-200 mt-8 p-5">
-        <div>সাজান</div>
-        <div>
-            <details className="dropdown">
-              <summary className="btn m-1">ডিফল্ট 
-              <FontAwesomeIcon className="h-5" icon={faAngleDown} style={{ color: "rgb(0,0,0)" }}/>
-              
-              </summary>
-              <ul className="menu dropdown-content bg-base-100 rounded-box z-1 w-52 p-2 shadow-sm">
-                <li><a>Item 1</a></li>
-                <li><a>Item 2</a></li>
-              </ul>
-          </details>
-        </div>
-
-        
-      </div>
+      <SortDropdown data={data} />
       
-      <div className="container mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 justify-items-center justify-center">
+      {/* <div className="container mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 justify-items-center justify-center">
           {data.map((n) => (
             
             <Card key={n.id} props={n} />
           ))}
-      </div>
+      </div> */}
 
     </div>
     
