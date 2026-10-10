@@ -3,7 +3,7 @@ import { Hind_Siliguri } from "next/font/google";
 import "./globals.css";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-
+import { Toaster } from "sonner";
 
 const hindSiliguri = Hind_Siliguri({
   subsets: ["latin", "bengali"],
@@ -31,6 +31,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
 
         
         <Footer/>
+        <Toaster position="top-center" richColors />
         </body>
     </html>
   );

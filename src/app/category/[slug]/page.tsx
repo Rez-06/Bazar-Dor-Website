@@ -1,9 +1,9 @@
-import Card from "@/app/components/Card";
+import Card from "../../components/Card";
 import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import SortDropdown from "@/app/components/SortDropdown";
+import SortDropdown from "../../components/SortDropdown";
 // import { useState } from "react";
 type Props = {
   params: Promise<{ slug: string }>;
@@ -11,12 +11,15 @@ type Props = {
 
 export default async function CategoryPage({ params }: Props) {
   const { slug } = await params;
-  const res=await fetch(`https://api.api-store.workers.dev/api/bazardor/products?category=${slug}`)
+  // const res=await fetch(`https://api.api-store.workers.dev/api/bazardor/products?category=${slug}`) //option 1
+  const res = await fetch(`https://openapi.programming-hero.com/api/bazardor/products?category=${slug}`)
+  
   if (!res.ok) {
     notFound();
   }
   const data=await res.json()
-  const res2=await fetch(`https://api.api-store.workers.dev/api/bazardor/categories/${slug}`)
+  // const res2=await fetch(`https://api.api-store.workers.dev/api/bazardor/categories/${slug}`) //option 1
+  const res2 = await fetch(`https://openapi.programming-hero.com/api/bazardor/categories/${slug}`)
   if (!res2.ok) {
     notFound();
   }

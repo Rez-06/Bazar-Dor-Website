@@ -1,6 +1,6 @@
 "use client";
 import { useRef, useState } from "react";
-import Card from "@/app/components/Card";
+import Card from "./Card";
 import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 

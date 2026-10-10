@@ -1,5 +1,5 @@
-import CardSkeleton from "@/app/components/CardSkeleton";
 
+import CardSkeleton from "./components/CardSkeleton";
 export default function Loading() {
   return (
     <div className="bg-[#F0F5F0] pt-10">

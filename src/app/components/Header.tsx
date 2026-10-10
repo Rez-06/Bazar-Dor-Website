@@ -3,10 +3,14 @@ import Image from 'next/image';
 import Navbar from './Navbar';
 import Marquee from './Marquee';
 import Link from 'next/link';
+import AuthButtons from './AuthButtons';
 
+// const res = await fetch(
+//     "https://api.api-store.workers.dev/api/bazardor/categories"
+// ); //option 1
 const res = await fetch(
-    "https://api.api-store.workers.dev/api/bazardor/categories"
-);
+    "https://openapi.programming-hero.com/api/bazardor/categories"
+); 
 const data = await res.json();
 const Header = () => {
      const date = new Date().toLocaleDateString("bn-BD", {
@@ -25,8 +29,8 @@ const Header = () => {
                             <h2 className='text-sm px-3 leading-tight'>{date}</h2>
                         </div>
                     </Link>
-                    <div>
-                        Sign-up
+                    <div className='flex items-center'>
+                        <AuthButtons />
                     </div>
                 </div>
             </div>

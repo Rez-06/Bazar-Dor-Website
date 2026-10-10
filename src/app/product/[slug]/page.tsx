@@ -9,7 +9,10 @@ type Props = {
 
 export default async function ProductPage({ params }: Props) {
     const { slug } = await params;
-    const res = await fetch(`https://api.api-store.workers.dev/api/bazardor/products?slug=${slug}`)
+    //const res = await fetch(`https://api.api-store.workers.dev/api/bazardor/products?slug=${slug}`) //option 1
+    const res = await fetch(`https://openapi.programming-hero.com/api/bazardor/products?slug=${slug}`)
+    
+    
     if (!res.ok) {
         notFound();
     }
