@@ -29,7 +29,7 @@ export default async function CategoryPage({ params }: Props) {
   return (
     <>
     <div className="bg-[#F0F5F0]">
-      <div className="bg-white container mx-auto my-5 rounded-3xl flex items-center border border-gray-200">
+      <div className="bg-white mx-auto w-full max-w-6xl px-4 my-5 rounded-3xl flex items-center border border-gray-200">
         <div className="text-8xl py-5 pl-5">{data2.icon}</div>
         <div>
           <div className="text-4xl font-semibold">{data2.nameBn}</div>
@@ -41,7 +41,7 @@ export default async function CategoryPage({ params }: Props) {
 
       <SortDropdown data={data} />
       
-      {/* <div className="container mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 justify-items-center justify-center">
+      {/* <div className="mx-auto w-full max-w-6xl px-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 justify-items-center justify-center">
           {data.map((n) => (
             
             <Card key={n.id} props={n} />

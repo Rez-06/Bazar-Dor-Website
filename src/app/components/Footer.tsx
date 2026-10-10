@@ -6,7 +6,7 @@ const Footer = () => {
             <div className='bg-[#F0F5F0] h-10'></div>
             
             <hr />
-            <div className='flex justify-between container mx-auto py-5 font-medium md:text-lg text-xs'>
+            <div className='flex justify-between mx-auto w-full max-w-6xl px-4 py-5 font-medium md:text-lg text-xs'>
                 <div>
                     <h2>বাজার দর — প্রয়োজনীয় পণ্যের দাম এক নজরে।</h2>
                 </div>

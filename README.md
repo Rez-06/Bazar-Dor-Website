@@ -1,36 +1,36 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🛒 বাজার দর (BazarDor)
 
-## Getting Started
+> প্রয়োজনীয় পণ্যের দাম এক নজরে — daily Bangladeshi market prices for rice, lentils, oil, vegetables, fish, meat, eggs-dairy and spices, with price changes and market-wise breakdowns, all in Bangla.
 
-First, run the development server:
+**Live site:** //
+**Repository:** https://github.com/Rez-06/Bazar-Dor-Website
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+---
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 📖 About
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+BazarDor is a responsive web app that helps people check today's prices of everyday essentials at a glance. Browse the biggest price risers and fallers, explore products by category, sort by price, and sign in to see detailed price ranges across different bazaars in Bangladesh. The interface is fully in Bangla, including Bengali numerals and the Bangla date.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## ✨ Key Features
 
-## Learn More
+1. **Live price ticker** – an infinitely scrolling marquee under the navbar showing emoji, product name, price per unit and a ▲/▼ percentage change.
+2. **Daily risers & fallers** – the home page highlights the top 6 products whose prices went up and the top 6 whose prices went down, plus a full responsive grid of all products.
+3. **Category pages with sorting** – browse by category and sort by default, price low → high, or price high → low. Sorting uses numeric values, so Bengali numerals sort correctly.
+4. **Protected product details** – signed-in users can open any product to see minimum, maximum and average prices, plus a market-by-market price table.
+5. **Authentication with BetterAuth** – email/password, Google and GitHub sign-in, with toast notifications for success, errors and sign-out.
+6. **Profile management** – view your profile and update your name from a dedicated update page.
+7. **Loading and error states** – skeleton loaders on home and category pages, a friendly Bangla 404 page, and an empty state for categories with no products.
+8. **Fully responsive** – works on mobile, tablet and desktop.
 
-To learn more about Next.js, take a look at the following resources:
+## 🧰 Technologies Used
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+| Area | Tools |
+| --- | --- |
+| Framework | [Next.js](https://nextjs.org) (App Router), React, TypeScript |
+| Styling | Tailwind CSS, daisyUI |
+| Authentication | [BetterAuth](https://better-auth.com) |
+| Database | MongoDB (via the BetterAuth MongoDB adapter) |
+| UI helpers | react-hot-toast, react-marquee-text, Font Awesome |
+| Font | Hind Siliguri (Bangla support) |
+| Deployment | Vercel |
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.

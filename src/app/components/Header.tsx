@@ -19,7 +19,7 @@ const Header = () => {
 
     return (<>
             <div>
-                <div className='container mx-auto pt-3 flex justify-between'>
+                <div className='mx-auto w-full max-w-6xl px-4 pt-3 flex justify-between'>
                     <Link className='flex' href="/">
                         <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#05893E]">
                             <Image src={"/logo-icon.png"} alt={"Logo"} width={24} height={24} className='object-contain'/>

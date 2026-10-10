@@ -10,7 +10,7 @@ const Navbar = ({data}:{ data: { id: string,
     return (
         <div className='pt-3'>
             <hr className="w-full h-0.5 border-white bg-gray-100" />
-            <div className="container mx-auto grid grid-cols-4 gap-4 pl-4 py-2 sm:flex sm:gap-8">
+            <div className="mx-auto w-full max-w-6xl px-4 grid grid-cols-4 gap-4 pl-4 py-2 sm:flex sm:gap-8">
                 {data.map((n) => {
                     const href = `/category/${n.slug}`;
                     const isActive = pathName.replace(/\/$/, "") === href;

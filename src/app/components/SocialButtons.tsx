@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import { toast } from "sonner";
+import toast from "react-hot-toast";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGoogle, faGithub } from "@fortawesome/free-brands-svg-icons";
 import { authClient } from "@/app/lib/auth-client";

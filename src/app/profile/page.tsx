@@ -1,7 +1,8 @@
 "use client";
 import { useEffect, useState, type FormEvent } from "react";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { toast } from "sonner";
+import toast from "react-hot-toast";
 import Avatar from "@/app/components/Avatar";
 import { authClient } from "@/app/lib/auth-client";
 
@@ -76,28 +77,13 @@ export default function ProfilePage() {
           </button>
         </div>
 
-        <form
-          onSubmit={handleUpdate}
-          className="mt-5 bg-white rounded-2xl border border-gray-200 p-4 sm:p-6 flex flex-col gap-4"
-        >
+        <div className="mt-5 bg-white rounded-2xl border border-gray-200 p-4 sm:p-6">
           <h2 className="font-semibold">তথ্য</h2>
-          <label className="flex flex-col gap-1 text-sm font-semibold">
-            নাম
-            <input
-              value={value}
-              onChange={(e) => setEdited(e.target.value)}
-              className="input w-full font-normal"
-            />
-          </label>
-          <button
-            type="submit"
-            disabled={saving}
-            className="btn w-full bg-[#05893E] text-white border-none"
-          >
-            {saving && <span className="loading loading-spinner loading-sm"></span>}
+          <div className="text-sm mt-3">নাম: {name}</div>
+          <Link href="/profile/update" className="btn w-full mt-4 bg-[#05893E] text-white border-none">
             আপডেট
-          </button>
-        </form>
+          </Link>
+        </div>
       </div>
     </div>
   );

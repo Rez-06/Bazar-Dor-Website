@@ -1,8 +1,8 @@
 "use client";
-import { useEffect, useState, type FormEvent } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { toast } from "sonner";
+import toast from "react-hot-toast";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
 import SocialButtons from "@/app/components/SocialButtons";
@@ -26,7 +26,7 @@ export default function SignInPage() {
     toast.error(message);
   };
 
-  const handleSubmit = async (e: FormEvent) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setError("");
     if (!email.trim() || !password) return fail("ইমেইল ও পাসওয়ার্ড দিন");

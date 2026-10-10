@@ -25,9 +25,10 @@ const SortDropdown = ({ data }: { data: any[] }) => {
 
   return (
     <>
-      <div className="bg-white container mx-auto my-5 rounded-3xl flex justify-end items-center border gap-5 border-gray-200 mt-8 p-5">
+      <div className="bg-white mx-auto w-full max-w-6xl px-4 my-5 rounded-3xl flex justify-end items-center border gap-5 border-gray-200 mt-8 p-5">
         <div>সাজান</div>
         <div>
+          
           <details className="dropdown" ref={dropdownRef}>
             <summary className="btn m-1">
               {currentLabel}
@@ -51,8 +52,11 @@ const SortDropdown = ({ data }: { data: any[] }) => {
           </details>
         </div>
       </div>
+      <p className="mx-auto w-full max-w-6xl px-4 text-sm text-gray-600 mb-3">
+        মোট {sorted.length.toLocaleString("bn-BD")}টি পণ্য দেখানো হচ্ছে
+      </p>
 
-      <div className="container mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 justify-items-center justify-center">
+      <div className="mx-auto w-full max-w-6xl px-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 justify-items-center justify-center">
         {sorted.map((n) => (
           <Card key={n.id} props={n} />
         ))}
