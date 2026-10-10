@@ -2,13 +2,20 @@ import React from 'react';
 import MarqueeText from "react-marquee-text"
 import Link from 'next/link';
 //const res = await fetch("https://api.api-store.workers.dev/api/bazardor/products") //option 1
-const res = await fetch("https://openapi.programming-hero.com/api/bazardor/products")
-const data= await res.json();
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCaretUp, faCaretDown } from "@fortawesome/free-solid-svg-icons";
-
-const Marquee = () => {
-    
+type Product = {
+  slug: string;
+  image: string;
+  nameBn: string;
+  today: number;
+  unit: string;
+  change: { dir: "up" | "down" | "flat"; pct: number };
+};
+const Marquee = async () => {
+    const res = await fetch("https://openapi.programming-hero.com/api/bazardor/products")
+    const data: Product[]= await res.json();
     return (
         <div>
             <MarqueeText>
