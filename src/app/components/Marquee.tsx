@@ -38,7 +38,7 @@ const fmtPct = (n: number) =>
 const Marquee = () => {
   return (
     <div>
-      <MarqueeText duration={12}>
+      <MarqueeText duration={10}>
         {data.map((n) => {
           const dir = n.change.dir;
           return (
