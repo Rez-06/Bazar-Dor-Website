@@ -3,7 +3,7 @@ import Link from "next/link";
 import Card from "./components/Card";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCaretUp, faCaretDown } from "@fortawesome/free-solid-svg-icons";
-
+import TodayDate from "./components/TodayDate";
 type Product = {
   id: number;
   slug: string;
@@ -32,16 +32,16 @@ export default async function Home() {
     .sort((a, b) => Math.abs(b.change.pct) - Math.abs(a.change.pct))
     .slice(0, 6);
   
-  const date = new Date().toLocaleDateString("bn-BD", {
-        dateStyle: "full",
-    });
+  // const date = new Date().toLocaleDateString("bn-BD", {
+  //       dateStyle: "full",
+  //   });
   return (
     <>
       <div className=" bg-[#F0F5F0]">
         <div className="flex flex-col md:flex-row justify-between mx-auto w-full max-w-6xl px-4 bg-white mt-5 rounded-2xl border border-gray-200">
           <div className="text-center md:text-left ml-10">
             <div className="bg-[#05893E]/10 w-fit mx-auto md:mx-0 flex justify-center h-6 rounded-2xl text-[#05893E] mt-5 px-3">
-              {date}
+              <TodayDate />
             </div>
 
             <div className="text-3xl mt-3 font-bold">
