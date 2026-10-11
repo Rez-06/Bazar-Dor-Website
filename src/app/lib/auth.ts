@@ -9,6 +9,11 @@ export const auth = betterAuth({
   database: mongodbAdapter(db, {
     client,
   }),
+  baseURL: process.env.BETTER_AUTH_URL,
+  trustedOrigins: [
+    "https://bazar-dor-website-dusky.vercel.app",
+    "https://*.vercel.app",
+  ],
   emailAndPassword: {
     enabled: true,
     autoSignIn: false, 
