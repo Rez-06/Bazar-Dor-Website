@@ -2,7 +2,7 @@
 
 > প্রয়োজনীয় পণ্যের দাম এক নজরে — daily Bangladeshi market prices for rice, lentils, oil, vegetables, fish, meat, eggs-dairy and spices, with price changes and market-wise breakdowns, all in Bangla.
 
-**Live site:** bazar-dor-website-dusky.vercel.app
+**Live site:** https://bazar-dor-website-dusky.vercel.app
 **Repository:** https://github.com/Rez-06/Bazar-Dor-Website
 
 ---
